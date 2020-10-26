@@ -1,0 +1,229 @@
+<div id="quienesSomos" class="row container-fluid mb-4 mt-4 justify-content-center">
+  <div class="col-sm-10 col-md-11 text-center text-white">
+    <h1 class="text-muted">SOMOS PUBLIMAGEN</h1>
+    <p class="text-justify text-dark">
+      <b>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis illum repellat ea, dolorum quam amet ratione
+        facilis. Qui laborum, molestias saepe repellendus dignissimos non sint, placeat officiis labore, beatae sunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ullam nulla, dolor qui vel obcaecati repudiandae
+        dignissimos autem natus ipsum reprehenderit earum quo culpa eligendi quia? Quod autem reprehenderit corrupti?
+      </b>
+    </p>
+  </div>
+</div>
+<br>
+<div id="servicios" class="mb-4">
+  <div class="row text-center">
+    <div class="col-sm-12 col-md-12">
+      <h2 class="text-muted">SERVICIOS</h2>
+    </div>
+  </div>
+  <div class="row container-fluid text-center text-muted">
+    <div *ngFor="let servicio of servicios; let i = index" class="col-md-3">
+      <img src={{servicio.image}} style="max-height: 6rem;">
+      <h5>{{servicio.name}}</h5>
+      <button class="btn btn-info" data-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="false"
+        [attr.aria-controls]="'collapse' + i">
+        DETALLES
+      </button>
+      <div class="collapse" [attr.id]="'collapse' + i">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div id="soluciones" class="mb-4">
+  <div class="row text-center text-muted mb-4">
+    <div class="col-md-12">
+      <h2>SOMOS SOLUCIONES CREATIVAS</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" *ngFor="let solucion of soluciones;let index = index"
+            [attr.data-slide-to]="index"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let solucion of soluciones;let index = index;let isFirst = first"
+            [ngClass]="{active:isFirst}">
+            <img [src]="solucion.urlImage" class="d-block w-100" [alt]="solucion.name">
+            <div class="carousel-caption d-none d-md-block text-white">
+              <h5 [textContent]="solucion.name"></h5>
+              <p [textContent]="solucion.description"></p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div id="proyectos" class="mb-4">
+  <div class="row text-center text-muted mb-4">
+    <div class="col-md-12">
+      <h2>PROYECTOS RECIENTES</h2>
+    </div>
+  </div>
+  <div class="row container-fluid text-center text-muted">
+    <div *ngFor="let trabajo of trabajos; let i = index" class="col-md-3">
+      <div *ngIf="i <= 3" class="zoom">
+        <h5>{{trabajo.name}}</h5>
+        <img src={{trabajo.urlImage}} style="max-height: 6rem;" data-toggle="modal" data-target="#exampleModal">
+        <h5>{{trabajo.description}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Proyectos Recientes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col-md-11">
+            <div id="carouselExample" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExample" *ngFor="let trabajo of trabajos; let index = index"
+                  [attr.data-slide-to]="index"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let trabajo of trabajos; let index = index;let isFirst = first"
+                  [ngClass]="{active:isFirst}">
+                  <img [src]="trabajo.urlImage" class="d-block w-100" [alt]="trabajo.name">
+                  <div class="carousel-caption d-none d-md-block text-white">
+                    <h5 [textContent]="trabajo.name"></h5>
+                    <p [textContent]="trabajo.description"></p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div id="clientes" class="mb-4">
+  <div class="row text-center text-muted mb-4">
+    <div class="col-md-12">
+      <h2>NUESTROS CLIENTES</h2>
+    </div>
+  </div>
+  <div class="row container-fluid text-center text-muted">
+    <div *ngFor="let cliente of clientes; let i = index" class="col-md-3">
+      <div *ngIf="i <= 3">
+        <h5>{{cliente.name}}</h5>
+        <img class="grayscale" src={{cliente.image}} style="max-height: 10rem;">
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div id="contacto" class="bg-info">
+  <div class="row text-white">
+    <div class="col-sm-12 col-md-5 offset-1">
+      <h2>CONTACTANOS</h2>
+      <div class="row align-items-center">
+        <img class="col-2 col-sm-2 col-md-2" src="../../../assets/img/svg/icono_telefono_blanco.svg">
+        <label class="datos col-10 col-sm-10 col-md-10">+52 222 6282</label>
+      </div>
+      <br>
+      <div class="row align-items-center">
+        <img class="col-2 col-sm-2 col-md-2" src="../../../assets/img/svg/icono_mail _blanco.svg">
+        <div class="col-10 col-sm-10 col-md-10">
+          <label class="datos">ventas@publimagenchile.cl</label><br>
+          <label class="datos">publimagenchile@gmail.cl</label>
+        </div>
+      </div>
+      <br>
+      <div class="row align-items-center">
+        <img class="col-2 col-sm-2 col-md-2" src="../../../assets/img/svg/icono_ubicacion.svg">
+        <div class="col-10 col-sm-10 col-md-10">
+          <label class="datos">Los Carreras nº1661, Copiapó</label><br>
+          <label class="datos">Region de Atacama</label>
+        </div>
+      </div>
+      <br>
+      <div class="row align-items-center">
+        <label class="datos col-6 col-sm-6 col-md-6">Encuentranos en: </label>
+        <img class="col-2 col-sm-2 col-md-2" src="../../../assets/img/svg/icono_facebook.svg">
+        <img class="col-2 col-sm-2 col-md-2" src="../../../assets/img/svg/icono_instagram.svg">
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-5">
+      <div class="row-container">
+        <div class="col-12">
+          <label>Envianos tu consulta y te llamaremos a la brevedad para que nos cuentes sobre tu empresa o
+            proyecto y te asesoraremos sin compromiso.
+          </label>
+        </div>
+      </div>
+      <div class="row-container">
+        <div class="col-xs-12 col-sm-12 col-md-12 mb-2">
+          <form action="" method="POST" enctype="multipart/form-data" [formGroup]="contactForm" (ngSubmit)="onSubmit()"
+            class="needs-validation" novalidate>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <input id="name" type="text" class="form-control" formControlName="name" maxlength="50" required
+                  placeholder="Tu nombre">
+              </div>
+            </div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <input id="email" type="email" class="form-control" formControlName="email"
+                  placeholder="Tu correo electrónico">
+              </div>
+            </div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <input id="fono" type="text" class="form-control" formControlName="fono" placeholder="Tu Telefono">
+              </div>
+            </div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <textarea id="fono" class="form-control" formControlName="fono" rows="8"
+                  placeholder="Escribenos un mensaje"></textarea>
+              </div>
+            </div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-xs-6 col-sm-6 col-md-6 mb-2 text-center">
+                <button class="btn btn-primary" type="submit" name="action" [disabled]="!contactForm.valid">ENVIAR
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

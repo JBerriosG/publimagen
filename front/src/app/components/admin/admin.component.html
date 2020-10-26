@@ -1,0 +1,175 @@
+<div class="container">
+
+    <div class="row container-fluid" *ngIf="opt2 == 'servicios'">
+        <div class="col-xs-10 col-sm-10 col-md-5 mb-2">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <b>{{title}}</b>
+                </div>
+                <form action="/api/upload" method="POST" enctype="multipart/form-data" [formGroup]="imageForm"
+                    (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-md-5 col-sm-5 col-xs-5">
+                            <label for="name">Nombre</label>
+                            <input id="name" type="text" class="form-control" formControlName="name" maxlength="50"
+                                required>
+                        </div>
+                        <div class="form-group col-md-5 col-sm-5 col-xs-5">
+                            <label for="companyName">Empresa</label>
+                            <input id="companyName" type="text" class="form-control" formControlName="companyName">
+                        </div>
+                    </div>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-xs-10 col-sm-10 col-md-10">
+                            <label for="description">Descripción</label>
+                            <textarea id="description" class="form-control" formControlName="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-xs-10 col-sm-10 col-md-10">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="file">Choose file</label>
+                                <input type="file" id="file" placeholder="file" (change)="onFileChange($event)"
+                                    formControlName="file" name="file" class="custom-file-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-xs-6 col-sm-3 col-md-3 mb-2 text-center">
+                            <button class="btn btn-primary" type="submit" name="action"
+                                [disabled]="!imageForm.valid">Submit
+                            </button>
+                        </div>
+                        <div class="form-group col-xs-6 col-sm-3 col-md-3 mb-2 text-center">
+                            <button class="btn btn-warning" type="button" name="limpiar" (click)="limpiar()">Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-5">
+            <table class="table table-light table-hover text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Empresa</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let producto of productos">
+                        <td>{{producto.name}}</td>
+                        <td>{{producto.companyName}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning mr-2" (click)="editar(producto._id)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" (click)="eliminar(producto._id)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 text-center">
+            <div class="btn-group btn-block">
+                <button id="paneles" type="button" class="btn btn-success dropdown-toggle btn-block" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+                <div class="dropdown-menu btn-block" aria-labelledby="paneles">
+                    <a class="dropdown-item" (click)="changeForm('trabajos')">Trabajos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row container-fluid" *ngIf="opt2 == 'trabajos'">
+        <div class="col-xs-10 col-sm-10 col-md-5 mb-2">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <b>{{title2}}</b>
+                </div>
+                <form action="/api/upload" method="POST" enctype="multipart/form-data" [formGroup]="trabajosForm"
+                    (ngSubmit)="onSubmit2()" class="needs-validation" novalidate>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-md-5 col-sm-5 col-xs-5">
+                            <label for="name">Nombre</label>
+                            <input id="name" type="text" class="form-control" formControlName="name" maxlength="50"
+                                required>
+                        </div>
+                        <div class="form-group col-md-5 col-sm-5 col-xs-5">
+                            <label for="companyName">Empresa</label>
+                            <input id="companyName" type="text" class="form-control" formControlName="companyName">
+                        </div>
+                    </div>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-xs-10 col-sm-10 col-md-10">
+                            <label for="description">Descripción</label>
+                            <textarea id="description" class="form-control" formControlName="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-xs-10 col-sm-10 col-md-10">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="file">Choose file</label>
+                                <input type="file" id="file" placeholder="file" (change)="onFileChange($event)"
+                                    formControlName="file" name="file" class="custom-file-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row container-fluid justify-content-center">
+                        <div class="form-group col-xs-6 col-sm-3 col-md-3 mb-2 text-center">
+                            <button class="btn btn-primary" type="submit" name="action"
+                                [disabled]="!trabajosForm.valid">Submit
+                            </button>
+                        </div>
+                        <div class="form-group col-xs-6 col-sm-3 col-md-3 mb-2 text-center">
+                            <button class="btn btn-warning" type="button" name="limpiar" (click)="limpiar2()">Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-5">
+            <table class="table table-light table-hover text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Empresa</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let trabajo of trabajos">
+                        <td>{{trabajo.name}}</td>
+                        <td>{{trabajo.companyName}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning mr-2" (click)="editar2(trabajo._id)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" (click)="eliminar2(trabajo._id)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 text-center">
+            <div class="btn-group btn-block">
+                <button id="paneles" type="button" class="btn btn-success dropdown-toggle btn-block" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+                <div class="dropdown-menu btn-block" aria-labelledby="paneles">
+                    <a class="dropdown-item" (click)="changeForm('servicios')">Servicios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

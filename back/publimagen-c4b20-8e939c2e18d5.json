@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "publimagen-c4b20",
+  "private_key_id": "8e939c2e18d5fb3e908b43850645a30e32e5b0b8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDbkY4FBBwPfIRA\nE+BioiYR6VGfrhEKfRD1gdJ636L7WVRQF+ujIlV6V+f5/GmwLHQbHsI9ArK03iKQ\nueFvSbmIKV4DDza74IGBoh5/nE2q6C73hl2RQh9VFzQiF972nEXgsvrKHIg9YxBU\nAPnVywaJcUPCSgyBnOAIq6K4ZDbdL4eVwQoudae07RQCOorYb2T7W2BQJFC7lRtU\n5ONzIXCByT2ToC2rOAE0HlQPZBa1bDKIopmYJa9IHwLMvU0py38g9peD0EjhwNYW\nWXmCDbrHaqkOOUoJ8iAJZfs4g9J2RMOhVjtmE7+i0ec4LBm4RGoHDKnFeYYdm8If\nbQEp2UsPAgMBAAECggEAZiprsVTQs7oGFYTKJ0r4uOPeWZUWk9FO91WheRAfV6Ig\ns6X1vHIo4OUPaUg0a0e7/LSKv/XF7pff8IS1a2GcJUnOV1EYcEJOMGIdm9ZAY3Jn\nDEDmv8TLLH5AAU8nLYvYje3p+Ope0GWMfvH3Ti4KjCB6XWi0OgkjS5WFgRQMXU04\nPgXVr5VlaHSmw7wOwdZ7kYgaBfK3s+Ad0B4mgEzmi3B9xh27aIiEMrVI/ojLbC0i\nvdOZQFsxlTNhKoV4hhgxovgIZ/63JoOm5Jkx14zC2THvdgwkLB46wyNfK1WuNTWA\nwrePnxS6hJEvdy5amCtkV4slWLQxFXJoYfmLBke0UQKBgQDvLGY/efKj1AUV++gE\n7TXT67Gv1JQCs/d7UnCCl4eh062cC+r8zdBRaZnl/GW4pLdnXYgcRn6F/a9NuR0j\nPGp8JWdc530B1VGKgVtTeIRqqCgn2oYv20Mf/PTbYpNBNrmvsp2EU5EamOyFBm2X\nZCr+4qxQWLQkdrr0MyMSJp0hcQKBgQDrBBCNr+PBJwhyAZSonbdnVGlzYj4TLzy7\nqjC6AisGTExJTn3tOooP5QhtJvrGVtmMJL/1KVp7diQMhPTW0Q+ZgLtAzk7PaP2l\nJUwRHoGQtpj0Y6i9tbEt/9+e0f28CLbLe3B2CiIoCy3CqoP6JkeclsQh+BSvqj+w\nl44QG2b0fwKBgQChm7OfMoxkbK/fEe7N3WbgwkK3F4HHbclMuAC0DSWlkD2f0mG+\n3mbji+Jkh65IHGyc2JNO38dATJE2iF2K4JjnN/Lm0LgkE/rcBtopxaZb1zIC8+J1\n1cc+hxMAZlQv3YWMlblfn4PNoAU5QYWtpQ50Wb+rLrTSarOarC8HZbYI0QKBgGKF\nl7LuM5p7lIzGoN13ELXeqz5VxxQfz2QU2sx/sC25uplYsG3NBqfXKgsoNiUDr7uS\nhG5wYaA0TLR64HFVvyZo0xc95cgJiZu74QGkOkjCY6jARrMRAi/4fnSEL8yuEoOH\nQgQaB2umFA7xkNZDSe4ZPivHZlSmGIEdZ87UzfpdAoGAWhiQDks/ldUsOEAYEBMa\ns51ANi1YF+oKmpJJWWvDhBWBeBAgUgWB4w3tARV1niW0wBbdm8HpiBMGBPCi2HlT\nz54By/9GkgvuIF4xo6mRrU+HReORTvtJQms9ag7Em6zItYPOGoDTpDORFQLrHdHN\nKFUym62p9sxI1xNFfOnG+Ds=\n-----END PRIVATE KEY-----\n",
+  "client_email": "publimagen-c4b20@appspot.gserviceaccount.com",
+  "client_id": "113475672294449800433",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/publimagen-c4b20%40appspot.gserviceaccount.com"
+}
